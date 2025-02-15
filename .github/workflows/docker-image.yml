@@ -19,6 +19,6 @@ jobs:
         USER: ${{ secrets.USER }}
         PASS: ${{ secrets.PASS }}     
       run: |        
-        docker build . --file Dockerfile.dockerfile --tag aniketahire/devops_aniket_ahire_ass2:v1
+        docker build . --file Dockerfile --tag aniketahire/devops_aniket_ahire_ass2:v1
         docker login -u $USER -p $PASS        
         docker push aniketahire/devops_aniket_ahire_ass2:v1
