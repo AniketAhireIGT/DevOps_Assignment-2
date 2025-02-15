@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}   
+      run: |        
+        docker build . --file Dockerfile --tag aniketahire/devops-ci-demo-2026:v1
+        docker login -u $USER -p $PASS        
+        docker push aniketahire/devops-ci-demo-2026:v1- uses: actions/checkout@v2
+    - name: Build the Docker image
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}   
+      run: |        
+        docker build . --file dockerfile.dockerfile --tag aniketahire/devops_aniket_ahire_ass2:v1
+        docker login -u $USER -p $PASS        
+        docker push aniketahire/devops_aniket_ahire_ass2:v1
