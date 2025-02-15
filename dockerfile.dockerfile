@@ -1,6 +1,6 @@
 FROM busybox
  
-LABEL KRUSHNA=krushna.patel@igtsolutions.com
+LABEL ANIKET=aniket.aniket@igtsolutions.com
  
 ADD index.html /www/index.html
  
